@@ -1,0 +1,204 @@
+Usage: rails COMMAND [ARGS]
+
+The most common rails commands are:
+ generate    Generate new code (short-cut alias: "g")
+ console     Start the Rails console (short-cut alias: "c")
+ server      Start the Rails server (short-cut alias: "s")
+ dbconsole   Start a console for the database specified in config/database.yml
+             (short-cut alias: "db")
+ new         Create a new Rails application. "rails new my_app" creates a
+             new application called MyApp in "./my_app"
+
+In addition to those, there are:
+ application  Generate the Rails application code
+ destroy      Undo code generated with "generate"
+ benchmarker  See how fast a piece of code runs
+ profiler     Get profile information from a piece of code
+ plugin       Install a plugin
+ runner       Run a piece of code in the application environment
+
+All commands can be run with -h for more information.
+Usage: rails COMMAND [ARGS]
+
+The most common rails commands are:
+ generate    Generate new code (short-cut alias: "g")
+ console     Start the Rails console (short-cut alias: "c")
+ server      Start the Rails server (short-cut alias: "s")
+ dbconsole   Start a console for the database specified in config/database.yml
+             (short-cut alias: "db")
+ new         Create a new Rails application. "rails new my_app" creates a
+             new application called MyApp in "./my_app"
+
+In addition to those, there are:
+ application  Generate the Rails application code
+ destroy      Undo code generated with "generate"
+ benchmarker  See how fast a piece of code runs
+ profiler     Get profile information from a piece of code
+ plugin       Install a plugin
+ runner       Run a piece of code in the application environment
+
+All commands can be run with -h for more information.
+[2011-08-13 14:39:17] INFO  WEBrick 1.3.1
+[2011-08-13 14:39:17] INFO  ruby 1.9.2 (2011-07-09) [i686-linux]
+[2011-08-13 14:39:17] INFO  WEBrick::HTTPServer#start: pid=2855 port=3000
+=> Booting WEBrick
+=> Rails 3.0.9 application starting in development on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/r3/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/user" for 127.0.0.1 at 2011-08-13 14:39:23 -0700
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /home/r3/.rvm/gems/ruby-1.9.2-p290@rails2tutorial/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-08-13 14:39:46 -0700
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 141ms (Views: 21.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-08-13 14:42:08 -0700
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 404 Not Found in 15ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=1):
+  app/controllers/users_controller.rb:16:in `show'
+
+Rendered /home/r3/.rvm/gems/ruby-1.9.2-p290@rails2tutorial/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /home/r3/.rvm/gems/ruby-1.9.2-p290@rails2tutorial/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+Rendered /home/r3/.rvm/gems/ruby-1.9.2-p290@rails2tutorial/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-08-13 14:42:38 -0700
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (105.9ms)
+Rendered users/new.html.erb within layouts/application (114.5ms)
+Completed 200 OK in 125ms (Views: 115.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-08-13 15:40:32 -0700
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (7.5ms)
+Rendered users/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 32ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-08-13 15:40:47 -0700
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eaZhwojCbavMtljeRYS1pOMfWVrmOzpvk3g1MlaKh7g=", "user"=>{"name"=>"Rekha", "email"=>"rekhu.meena@gmail.com"}, "commit"=>"Create User"}
+  [1m[35mAREL (0.7ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ('Rekha', 'rekhu.meena@gmail.com', '2011-08-13 22:40:47.089719', '2011-08-13 22:40:47.089719')
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 94ms
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-08-13 15:40:47 -0700
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 26ms (Views: 15.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-08-13 15:40:50 -0700
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (3.6ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 28ms (Views: 17.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-08-13 15:40:55 -0700
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (8.1ms)
+Rendered users/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 26ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-08-13 15:41:38 -0700
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eaZhwojCbavMtljeRYS1pOMfWVrmOzpvk3g1MlaKh7g=", "user"=>{"name"=>"Mitts", "email"=>"mitts.ninja@gmail.com"}, "commit"=>"Create User"}
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ('Mitts', 'mitts.ninja@gmail.com', '2011-08-13 22:41:38.173952', '2011-08-13 22:41:38.173952')[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 43ms
+
+
+Started GET "/users/2" for 127.0.0.1 at 2011-08-13 15:41:38 -0700
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered users/show.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 41ms (Views: 26.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-08-13 15:41:44 -0700
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 49ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-08-13 15:41:48 -0700
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 28ms (Views: 18.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-08-13 15:43:09 -0700
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (7.4ms)
+Rendered users/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 25ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-08-13 15:43:40 -0700
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eaZhwojCbavMtljeRYS1pOMfWVrmOzpvk3g1MlaKh7g=", "user"=>{"name"=>"Michael Hartl", "email"=>"michael@example.com"}, "commit"=>"Create User"}
+  [1m[36mAREL (1.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ('Michael Hartl', 'michael@example.com', '2011-08-13 22:43:40.780628', '2011-08-13 22:43:40.780628')[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 66ms
+
+
+Started GET "/users/3" for 127.0.0.1 at 2011-08-13 15:43:40 -0700
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered users/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 26ms (Views: 14.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at 2011-08-13 15:44:13 -0700
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered users/_form.html.erb (36.3ms)
+Rendered users/edit.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 59ms (Views: 47.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/3" for 127.0.0.1 at 2011-08-13 15:44:18 -0700
+  Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eaZhwojCbavMtljeRYS1pOMfWVrmOzpvk3g1MlaKh7g=", "user"=>{"name"=>"Michael Hartl", "email"=>"michael@example.org"}, "commit"=>"Update User", "id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "users" SET "email" = 'michael@example.org', "updated_at" = '2011-08-13 22:44:18.736710' WHERE "users"."id" = 3[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 43ms
+
+
+Started GET "/users/3" for 127.0.0.1 at 2011-08-13 15:44:18 -0700
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered users/show.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 65ms (Views: 39.3ms | ActiveRecord: 0.8ms)
